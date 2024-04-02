@@ -229,3 +229,15 @@
     background-size: 20% 100%, 20% 100%, 20% 100%;
   }
 }
+
+.collection {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 10px;
+  li {
+    border: 1px solid gray;
+    padding: 10px;
+    cursor: pointer;
+  }
+}
