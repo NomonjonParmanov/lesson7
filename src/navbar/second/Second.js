@@ -10,7 +10,9 @@ function Second() {
   return (
     <div className="container  ">
       <div className="second">
-        <img src={logo} alt="" />
+        <Link to={"/"}>
+          <img src={logo} alt="" />
+        </Link>
         <ul className="nav__links2">
           <li>
             <input type="text" placeholder="Search For items..." />
