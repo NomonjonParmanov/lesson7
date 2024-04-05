@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../../sass/global.scss";
 import axios from "axios";
 import { Link } from "react-router-dom";
-const API_URL = "https://fakestoreapi.com/products";
+const API_URL = "https://api.escuelajs.co/api/v1/products/";
 function Product() {
   const [data, setData] = useState([]);
   const [count, setCount] = useState(8);
@@ -36,7 +36,7 @@ function Product() {
   let products = data?.map((el) => (
     <div key={el.id} className="product__card">
       <Link to={`/product/${el.id}`}>
-        <img src={el.image} alt="" />
+        <img src={el.category.image} alt="" />
         <h2>Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops</h2>
         <div className="buy">
           <h3>{el.price} USD</h3>

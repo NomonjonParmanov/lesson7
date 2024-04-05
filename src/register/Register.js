@@ -4,13 +4,12 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Adming from "../components/adming/Adming";
-import { Link } from "react-router-dom";
-
+import { Link, Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 function Register() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [loggedIn, setLoggedIn] = useState(false);
-
   const handleSubmit = (e) => {
     e.preventDefault();
     const user = { username: "johnd", password: "m38rmF$" };
@@ -21,6 +20,9 @@ function Register() {
         console.log(res);
         localStorage.setItem("token", res.data.token);
         toast.success("Welcome");
+        localStorage.setItem("token", res.data.token);
+        Navigate(`/adming`);
+
         setLoggedIn(true);
       })
       .catch((err) => {
